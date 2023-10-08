@@ -26,6 +26,20 @@ string[] EnterArray(int n)
     return s;
 }
 
+string[] ChangeArray(string[] a)
+{
+    string[] s = new string[0];
+
+    for (int i = 0; i < a.Length; i++)
+        if (a[i].Length <= 3)
+        {
+            Array.Resize(ref s, s.Length + 1);
+            s[^1] = a[i];
+        }
+
+    return s;
+}
+
 string PrintArray(string[] a) => "[" + string.Join(", ", a) + "]";
 
 
@@ -35,5 +49,7 @@ Console.WriteLine();
 string[] s = EnterArray(n);
 Console.WriteLine();
 
-Console.WriteLine(PrintArray(s));
+string[] sNew = ChangeArray(s);
+
+Console.WriteLine($"{PrintArray(s)} => {PrintArray(sNew)}");
 
