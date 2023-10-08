@@ -13,13 +13,27 @@ int ReadVal(string msgText)
     return Convert.ToInt32(Console.ReadLine());
 }
 
-string [] EnterArray(int n)
+string[] EnterArray(int n)
 {
-    string [] s = new string[n];
+    string[] s = new string[n];
+
+    for (int i = 0; i < s.Length; i++)
+    {
+        Console.WriteLine($"Введите {i} элемент");
+        s[i] = Console.ReadLine();
+    }
 
     return s;
 }
 
+string PrintArray(string[] a) => "[" + string.Join(", ", a) + "]";
+
+
 int n = ReadVal("Введите количество элементов массива");
 Console.WriteLine();
+
+string[] s = EnterArray(n);
+Console.WriteLine();
+
+Console.WriteLine(PrintArray(s));
 
