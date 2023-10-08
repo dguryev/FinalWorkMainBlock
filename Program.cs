@@ -6,3 +6,20 @@
 [“Hello”, “2”, “world”, “:-)”] → [“2”, “:-)”]
 [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 [“Russia”, “Denmark”, “Kazan”] → []*/
+
+int ReadVal(string msgText)
+{
+    Console.WriteLine(msgText);
+    return Convert.ToInt32(Console.ReadLine());
+}
+
+string [] EnterArray(int n)
+{
+    string [] s = new string[n];
+
+    return s;
+}
+
+int n = ReadVal("Введите количество элементов массива");
+Console.WriteLine();
+
